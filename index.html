@@ -6,7 +6,7 @@
 <title>Mithun Das - backend architect</title>
 <meta name="description" content="Mithun Das - senior backend and platform architect. AI document processing, multi-tenant SaaS and EV charging systems in production. Go, TypeScript, Python, AWS. Kolkata, India.">
 <meta property="og:title" content="Mithun Das - backend architect">
-<meta property="og:description" content="Backend architect for systems where wrong answers cost money. Two platforms in production, three public repositories, nineteen years.">
+<meta property="og:description" content="Backend architect for systems where wrong answers cost money. Production platforms, three public repositories, building software since 2006.">
 <meta property="og:image" content="https://mithundas79.github.io/img/paynthr-agents.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230891B2'/%3E%3Ctext x='16' y='22' font-family='system-ui' font-size='18' font-weight='600' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <style>
@@ -74,7 +74,7 @@ footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--line);color:v
 <header>
   <h1>Mithun Das</h1>
   <div class="role">Senior backend &amp; platform architect - independent contractor</div>
-  <div class="meta">Kolkata, India (UTC+5:30) &middot; works US and European hours &middot; contracting through Jumacro Software Services Pvt. Ltd.</div>
+  <div class="meta">Kolkata, India (UTC+5:30) &middot; Jumacro Software Services Pvt. Ltd., established December 2014.<br>Core hours: <strong>1&ndash;11 PM IST</strong>. Client-specific overlap arranged for US and European teams.</div>
   <nav>
     <a href="mailto:mithun.das@jumacro.com">mithun.das@jumacro.com</a>
     <a href="https://github.com/mithundas79">GitHub</a>
@@ -84,16 +84,17 @@ footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--line);color:v
   </nav>
 </header>
 
-<p class="lede">I build and run production backends that businesses depend on every day: an AI bookkeeping platform posting into QuickBooks Online for a US accounting firm, and the charge-point management system behind a live EV charging network. Nineteen years in software, the last decade contracting independently. My work sits where a wrong answer costs money - accounting, payments, banking data, hardware in the field - so I design for the times a system is wrong, not only for the times it is right.</p>
+<p class="lede">I build production backends for accounting, payments, document processing and EV charging. Building software since 2006, I bring architecture, implementation and AWS delivery together, with explicit permissions, reliable integrations and evidence that the system works.</p>
+<p>I deliver projects through <strong>Jumacro Software Services Pvt. Ltd.</strong>, established in December 2014. Paynthr and AVEA were Jumacro projects. My <strong>Localghost engagement began in 2018</strong>; <strong>Electroop is the EV charging project I have worked on since 2022</strong>.</p>
 
-<h2 id="production">In production</h2>
+<h2 id="production">Selected work</h2>
 
-<h3>Paynthr - AI bookkeeping automation <small>2025 - present &middot; <a href="https://paynthr.com/">paynthr.com</a></small></h3>
-<p>Built end to end - product, architecture, code, infrastructure, release - and live in production for a US accounting firm since June 2026. Bills, receipts, cheques and bank statements arrive from Dropbox and email; OCR and LLM extraction read them; categorisation is grounded in each client's explicit accounting rules, so the model reads and suggests but never invents the accounting. A per-client trust dial decides what posts to QuickBooks Online unattended and what waits for a bookkeeper. Duplicates are refused at upload. Month-end close runs as a workflow of tie-out checks with a period lock. Every decision carries an audit trail a non-engineer can read.</p>
+<h3>Paynthr - AI bookkeeping automation <small>2025 - 2026 &middot; engagement completed &middot; <a href="https://paynthr.com/">paynthr.com</a></small></h3>
+<p>Delivered through Jumacro; my engagement is complete. I built the product, architecture, code, infrastructure and release process. The platform was in production for a US accounting firm during the engagement, from June 2026. Bills, receipts, cheques and bank statements arrive from Dropbox and email; OCR and LLM extraction read them; categorisation is grounded in each client's explicit accounting rules, with application rules and review thresholds controlling the accounting workflow. A per-client trust dial decides what posts to QuickBooks Online unattended and what waits for a bookkeeper. Duplicates are refused at upload. Month-end close runs as a workflow of tie-out checks with a period lock. Audit records and review screens make processing decisions inspectable.</p>
 <div class="facts">
   <div class="fact"><b>267 / 275</b>real invoices reconciled to the cent in a four-day certification on a fresh firm in staging</div>
   <div class="fact"><b>179 / 180</b>header fields right on an 18-document sample</div>
-  <div class="fact"><b>210</b>findings filed openly before the production release, defects included</div>
+  <div class="fact"><b>210</b>findings documented in a separate release audit, defects included</div>
   <div class="fact"><b>20+</b>Go services on AWS ECS, Aurora PostgreSQL with row-level security, Terraform, CI/CD</div>
 </div>
 <div class="tags">
@@ -103,7 +104,7 @@ footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--line);color:v
   <span class="tag">PostgreSQL row-level security</span>
   <span class="tag">QuickBooks Online</span>
   <span class="tag">Stripe</span>
-  <span class="tag">Yodlee bank feeds</span>
+  <span class="tag">Yodlee integration (sandbox)</span>
   <span class="tag">Dropbox &amp; email intake</span>
   <span class="tag">SQS-buffered workers</span>
   <span class="tag">React</span>
@@ -116,21 +117,21 @@ footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--line);color:v
 </div>
 <p class="note">Screens show the staging environment with QuickBooks sandbox companies and seeded test data only. No client data appears anywhere on this page.</p>
 
-<h3>Electroop - EV charge-point management <small>2022 - present</small></h3>
-<p>Backend architect of the platform behind a live EV charging network. The OCPP 1.6 / 2.0.1 WebSocket server talks to real chargers in the field over persistent connections, so it has to survive reconnection storms after outages, keep message ordering per charger, handle every message idempotently and isolate tenants. Around it: OCPI for roaming, the payment gateway interface, session and job services, tenant, admin and public REST APIs, and the backend for the mobile app. One codebase now ships seven white-label operator apps. TypeScript on AWS, with C# and Python components where the ecosystem required them.</p>
+<h3>Electroop - EV charge-point management <small>2022 - present &middot; Localghost project</small></h3>
+<p>Backend architect of the Electroop project within my Localghost engagement, which began in 2018. The platform supports a live EV charging network. The OCPP 1.6 / 2.0.1 WebSocket server talks to real chargers in the field over persistent connections, so it has to survive reconnection storms after outages, keep message ordering per charger, handle every message idempotently and isolate tenants. Around it: OCPI for roaming, the payment gateway interface, session and job services, tenant, admin and public REST APIs, and the backend for the mobile app. One codebase now ships seven white-label operator apps. TypeScript on AWS, with C# and Python components where the ecosystem required them.</p>
 <div class="wide"><img src="img/electroop.png" alt="Electroop architecture: charge points and roaming partners connect through the OCPP WebSocket server to tenant and admin APIs, payments and the mobile app backend" loading="lazy"></div>
 <p class="note">Electroop's customers are not mine to name, and none of its code is reused anywhere. What transfers is the knowledge of where these systems break.</p>
 
-<h2 id="stories">Three things from production</h2>
-<p>The questions that matter in this work are not "does it run" but "what happens when it is wrong". Three real cases, told plainly.</p>
+<h2 id="stories">Engineering case studies</h2>
+<p>The questions that matter in this work are not "does it run" but "what happens when it is wrong". Examples from completed delivery and historical investigations.</p>
 
 <div class="story">
   <h4>The dependency that answered 28 milliseconds too late</h4>
   <p>The categorisation agent fetches a client's chart of accounts and vendor list from QuickBooks before it can code anything. Those fetches began timing out - no error from QuickBooks, a timeout on our side. Instrumentation, not a complaint, found it: our client gave up at exactly 30 seconds and QuickBooks answered at 30.03. Two changes: a longer timeout, and a cache-warm wired into the QuickBooks connect hook so the first categorisation for a client never pays that cold fetch at all. A timeout that matches a dependency's worst case by coincidence is a bug waiting for a slow day; the fix for a slow dependency is usually to stop needing it on the hot path.</p>
 </div>
 <div class="story">
-  <h4>The scope gate that did not cover 38 routes</h4>
-  <p>Row-level security isolated tenants. A member-scope gate restricted which clients a firm member could act on - but 38 write routes resolved their object by (tenant, id) and never consulted client scope. A staging probe with real session tokens proved a member scoped to one client could act on another client's record and get HTTP 200. The same binary was running in production, so a read-only forensic pass followed: the backing tables had never received a row in the life of the database, the audit record held zero actor-to-client mismatches, and seven days of HTTP logs agreed. Latent, never realised; the fix was written the same week. The lesson kept: row-level security isolates tenants, not clients within a tenant, and scope has to be a property of the route table, not of individual handlers.</p>
+  <h4>Separating tenant isolation from client permissions</h4>
+  <p>An August 2026 authorization review found that database-level tenant isolation did not, by itself, enforce every member's client-level permissions. I reproduced the issue in staging, reviewed the available production records read-only, and prepared a remediation. No misuse was found in the records examined, but incomplete audit coverage meant that this was not proof of absence. The available records do not establish that the remediation was deployed to production. The engineering lesson: test authorization across member roles, client boundaries and object-based routes, and retain an attributable audit trail.</p>
 </div>
 <div class="story">
   <h4>When not to call the model</h4>
@@ -139,7 +140,7 @@ footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--line);color:v
 
 <h2 id="code">Public code</h2>
 <p>Three small repositories that show the working method in the open: the model proposes, deterministic code decides. Tests, CI and live demos; limits labelled honestly.</p>
-<div class="repo"><b>filing-agent</b><span>A tool-calling LLM agent that cannot mark its own work done. Hand-written tool loop on a fully local model (qwen2.5:7b via Ollama); fabricated evidence is refused with the closest matching document line as a hint; retries are bounded; every run writes a receipt with response digests and token counts that the model cannot author.</span><span class="links"><a href="https://github.com/mithundas79/filing-agent">github.com/mithundas79/filing-agent</a> &middot; <a href="https://mithundas79.github.io/filing-agent/">a real recorded session, replayed</a></span></div>
+<div class="repo"><b>filing-agent</b><span>A local LLM tool-loop demo using qwen2.5:7b through Ollama, application-side evidence checks, bounded retries and run receipts with response digests and token counts. The linked replay shows a recorded run; this is an engineering demo, not a production service.</span><span class="links"><a href="https://github.com/mithundas79/filing-agent">github.com/mithundas79/filing-agent</a> &middot; <a href="https://mithundas79.github.io/filing-agent/">a real recorded session, replayed</a></span></div>
 <div class="repo"><b>doc-intake</b><span>Documents in, order out - local OCR plus deterministic accounting rules decide what gets filed and what a person sees. No cloud, no key, no model. TypeScript, 27 tests, CI, in-browser demo.</span><span class="links"><a href="https://github.com/mithundas79/doc-intake">github.com/mithundas79/doc-intake</a> &middot; <a href="https://mithundas79.github.io/doc-intake/">live demo</a></span></div>
 <div class="repo"><b>doc-intake-service</b><span>The full-stack sibling: Python/FastAPI and React, native Tesseract OCR, a scikit-learn document-type classifier trained on a synthetic corpus with its honest metrics committed to the repository. The demo catches a duplicate upload and holds it for review.</span><span class="links"><a href="https://github.com/mithundas79/doc-intake-service">github.com/mithundas79/doc-intake-service</a></span></div>
 <div class="shots three">
@@ -148,12 +149,12 @@ footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--line);color:v
   <figure><img src="img/doc-intake-service.png" alt="doc-intake-service catching a duplicate upload and holding it for review" loading="lazy"><figcaption>doc-intake-service: a duplicate caught and held for review.</figcaption></figure>
 </div>
 
-<h2 id="also">Also</h2>
+<h2 id="also">More delivery experience</h2>
 <div class="rows">
-  <div><div><b>Shipping operations backend, US logistics company</b> - a serverless shipping-label OCR pipeline on AWS (S3, SQS-buffered Lambdas with reserved concurrency, Textract, SNS; raw response kept so every extraction can be re-checked) and a direct-carrier gateway in Python/FastAPI, in development. Their Laravel vendor portal: production bug-fixing and a major-version upgrade.</div><span>2025 - 2026</span></div>
+  <div><div><b>AVEA &mdash; shipping and logistics project through Jumacro</b> - a serverless shipping-label OCR pipeline on AWS (S3, SQS-buffered Lambdas with reserved concurrency, Textract, SNS; raw response kept so every extraction can be re-checked) plus work on a direct-carrier gateway in Python/FastAPI; its production launch is not claimed. Their Laravel vendor portal: production bug-fixing and a major-version upgrade.</div><span>2025 - 2026</span></div>
   <div><div><b>AWS cost reduction and infrastructure codification</b> - a console-built account inventoried read-only, rewritten as Terraform, and cut 24% ($2,039 to about $1,550 a month) with nothing removed that carried service impact; budget alarms so the next drift reports itself.</div><span>2025</span></div>
   <div><div><b>Upwork, 47 completed engagements, 2,400+ hours, 44 rated 5.0</b> - Node and MEAN microservices, WebSocket real-time systems, MongoDB and Neo4j on AWS and Google Cloud, Laravel, for food delivery, order management, dispatch and asset-tracking products.</div><span>2015 - 2020</span></div>
-  <div><div><b>Earlier</b> - programmer, project manager and architect roles for companies in India, Canada and Germany. PHP was the first professional language, from 2006.</div><span>2006 - 2014</span></div>
+  <div><div><b>Earlier roles</b> - Chief Technical Consultant at Pinpoint Media Design (2014&ndash;2018); earlier programmer, project manager and architect roles in India, Canada and Germany. Professional software work began in 2006.</div><span>2006 - 2018</span></div>
 </div>
 <div class="wide"><img src="img/aws-cost.png" alt="AWS bill reduced 24 percent in one month, from $2,039 to about $1,550, with the estate rewritten in Terraform" loading="lazy"></div>
 
@@ -171,15 +172,15 @@ footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--line);color:v
   <li>Backend-led. I ship React UIs from designs; I am not a design-led front-end specialist.</li>
   <li>AI application engineering, not data science. No fine-tuning, no PyTorch or TensorFlow work, no research claims. The one trained model in my public work is a scikit-learn classifier on a synthetic corpus, labelled as such.</li>
   <li>"Retrieval" in my production system means similarity search over a client's own mapping history for entity resolution - not document question-answering.</li>
-  <li>The shipping gateway above is in development; the scope-gate fix above is written and reviewed, not yet merged at the time of writing. I would rather say so here than have you find out later.</li>
+  <li>The AVEA direct-carrier gateway is described as development work, without a production-launch claim. Yodlee work was sandbox-only. The historical security case study distinguishes findings and prepared remediation from deployment verification.</li>
 </ul>
 
 <h2 id="stack">Stack</h2>
 <div class="tags">
   <span class="tag">Go</span><span class="tag">TypeScript / Node.js</span><span class="tag">Python / FastAPI</span><span class="tag">PHP / Laravel</span><span class="tag">C#</span><span class="tag">React</span>
-  <span class="tag">AWS ECS / Fargate</span><span class="tag">Lambda</span><span class="tag">Aurora PostgreSQL</span><span class="tag">S3 / SQS / SNS</span><span class="tag">CloudFront</span><span class="tag">Bedrock</span><span class="tag">Textract</span><span class="tag">Terraform</span><span class="tag">Docker</span><span class="tag">GCP</span>
-  <span class="tag">PostgreSQL + RLS</span><span class="tag">pgvector</span><span class="tag">MongoDB</span><span class="tag">Neo4j</span>
-  <span class="tag">Claude API</span><span class="tag">OCR</span><span class="tag">QuickBooks Online</span><span class="tag">Stripe</span><span class="tag">Yodlee</span><span class="tag">Dropbox</span><span class="tag">OCPP 1.6 / 2.0.1</span><span class="tag">OCPI</span><span class="tag">UPS / FedEx / USPS APIs</span>
+  <span class="tag">AWS ECS / Fargate</span><span class="tag">Lambda</span><span class="tag">Aurora PostgreSQL</span><span class="tag">S3 / SQS / SNS</span><span class="tag">CloudFront</span><span class="tag">Bedrock</span><span class="tag">Textract</span><span class="tag">Terraform</span><span class="tag">Docker</span><span class="tag">CodeBuild</span><span class="tag">GCP</span>
+  <span class="tag">PostgreSQL + RLS</span><span class="tag">pgvector / Titan embeddings</span><span class="tag">MongoDB</span><span class="tag">Neo4j</span>
+  <span class="tag">Claude API</span><span class="tag">OCR</span><span class="tag">QuickBooks Online</span><span class="tag">Stripe</span><span class="tag">Yodlee (sandbox)</span><span class="tag">Dropbox</span><span class="tag">OCPP 1.6 / 2.0.1</span><span class="tag">OCPI</span><span class="tag">Carrier API integration development</span>
 </div>
 
 <h2 id="contact">Contact</h2>
@@ -190,3 +191,4 @@ footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--line);color:v
 </main>
 </body>
 </html>
+
